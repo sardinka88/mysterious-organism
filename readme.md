@@ -5,6 +5,9 @@ DNA is comprised of four bases (Adenine, Thymine, Cytosine, and Guanine). When r
 mockUpStrand() is used to generate an array containing 15 bases to represent a single DNA strand with 15 bases.
 
 pAequorFactory() should return an object that contains the properties specimenNum and dna that correspond to the parameters provided.
-.mutate() is responsible for randomly selecting a base in the object’s dna property and changing the current base to a different base. Then .mutate() will return the object’s dna.
+
+.mutate() is responsible for randomly selecting a base in the object’s dna property and changing the current base to a different base. Then .mutate() will return the object’s DNA.
+
 The behavior of .compareDNA() is to compare the current pAequor‘s .dna with the passed in pAequor‘s .dna and compute how many bases are identical and in the same locations. .compareDNA() does not return anything, but prints a message that states the percentage of DNA the two objects have in common
+
 .willLikelySurvive() returns true if the object’s .dna array contains at least 60% 'C' or 'G' bases. Otherwise, .willLikelySurvive() returns false.

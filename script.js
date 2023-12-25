@@ -51,26 +51,54 @@ const pAequorFactory = (number, dnaBase) => {
       if (percentageGC >= 60) return true;
       else return false;
     },
+    // returns the complementary DNA strand: DNA sequences are found in nature as double-stranded structures (helices). The rules are that 'A' bases bind with 'T' bases (and vice versa) and 'C' bases bind with 'G' bases (and vice versa).
+    complementStrand() {
+      let complementaryStrand = [];
+      this.dna.forEach((base) => {
+        switch (base) {
+          case "A":
+            complementaryStrand.push("T");
+            break;
+          case "T":
+            complementaryStrand.push("A");
+            break;
+          case "C":
+            complementaryStrand.push("G");
+            break;
+          case "G":
+            complementaryStrand.push("C");
+            break;
+        }
+      });
+      return complementaryStrand;
+    },
   };
 };
 
 // Array to store instances that can likely survive
-const pAequorinstances = [];
+const pAequorInstances = [];
 // Create instances until you have exactly 30 that are likely to survive
 let i = 1;
-while (pAequorinstances.length < 30) {
+while (pAequorInstances.length < 30) {
   let instance = pAequorFactory(i, mockUpStrand());
   if (instance.willLikelySurvive()) {
-    pAequorinstances.push(instance);
+    pAequorInstances.push(instance);
     i++;
   }
 }
 
 // check if all instances inside the array are likely to survive
-pAequorinstances.forEach((specimen) => {
+pAequorInstances.forEach((specimen) => {
   console.log(
     `Specimen #${
       specimen.specimenNum
     } is likely to survive: ${specimen.willLikelySurvive()}`
   );
 });
+
+console.log(
+  "Main strand: ",
+  pAequorInstances[0].dna,
+  "Complementary strand: ",
+  pAequorInstances[0].complementStrand()
+);

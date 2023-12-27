@@ -10,4 +10,8 @@ Context: You’re part of a research team that has found a new mysterious organi
 
 + The behavior of **.compareDNA()** is to compare the current pAequor‘s .dna with the passed in pAequor‘s .dna and compute how many bases are identical and in the same locations. .compareDNA() does not return anything, but prints a message that states the percentage of DNA the two objects have in common. It uses the **specimenNum** to differentiate 2 compared specimens
 
-+ .willLikelySurvive() returns true if the object’s .dna array contains at least 60% 'C' or 'G' bases. Otherwise, .willLikelySurvive() returns false.
++ **.willLikelySurvive()** returns true if the object’s .dna array contains at least 60% 'C' or 'G' bases. Otherwise, .willLikelySurvive() returns false.
+
++ **pAeqourInstances** is an array containing 30 specimen that are likely to survive
+
++ **complementStrand()** returns a complementary DNA strand that needs to match the main DNA strand - pairing rules are: A pairs with T and vice versa. C pairs with G and vice versa.

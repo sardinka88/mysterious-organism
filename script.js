@@ -35,7 +35,7 @@ const pAequorFactory = (number, dnaBase) => {
       // Count of matching bases
       let matches = 0;
       for (let i = 0; i < this.dna.length; i++) {
-        if (this.dna[i] === otherSpecimen.dna[i]) matches += 1;
+        if (this.dna[i] === otherSpecimen.dna[i]) matches++;
       }
       // Calculating the percentage of matching DNA bases
       const percentage = ((matches / this.dna.length) * 100).toFixed(2);
@@ -45,7 +45,7 @@ const pAequorFactory = (number, dnaBase) => {
     willLikelySurvive() {
       let countGC = 0;
       this.dna.forEach((base) => {
-        if (base === "C" || base === "G") countGC += 1;
+        if (base === "C" || base === "G") countGC++;
       });
       const percentageGC = ((countGC / this.dna.length) * 100).toFixed(2);
       if (percentageGC >= 60) return true;
